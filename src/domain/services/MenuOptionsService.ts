@@ -5,7 +5,6 @@ import { MenuOptionType } from "../enums/MenuOptionType";
 import SubMenuOption from "../entites/SubMenuOption";
 
 class MenuOptionsService implements IMenuOptionsService {
-  /*Initializer*/
   public GetMenuOptions(): Array<MenuOption> {
     var menuOptions = new Array<MenuOption>();
 
@@ -18,7 +17,7 @@ class MenuOptionsService implements IMenuOptionsService {
     menuOptions.push(new MenuOption(3, 'Alertas', '/alertas', MenuOptionIconType.Alerts, MenuOptionType.Link));
 
     return menuOptions;
-  }
+  }  
 }
 
 export default MenuOptionsService

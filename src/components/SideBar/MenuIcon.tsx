@@ -6,7 +6,7 @@ type Props = {
   iconType: MenuOptionIconType;
 }
 
-export default function MenuOptionIcon({ iconType }: Props): JSX.Element {
+export default function MenuIcon({ iconType }: Props): JSX.Element {
 
   return (
     <>
