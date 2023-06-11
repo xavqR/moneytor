@@ -1,7 +1,7 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren } from 'react'
 
 type MyProps = {
-  children?: React.ReactElement;
+  children?: React.ReactElement
 }
 
 function MainContent(props: PropsWithChildren<MyProps>): JSX.Element {

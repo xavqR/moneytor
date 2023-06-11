@@ -1,6 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
-import MenuOptionIcon from "./MenuIcon";
-import MenuOption from "../../domain/entites/MenuOption";
+import { Link, useLocation } from 'react-router-dom'
+import MenuOptionIcon from './MenuIcon'
+import MenuOption from '../../domain/entites/MenuOption'
 
 type Props = {
   menuOption: MenuOption,

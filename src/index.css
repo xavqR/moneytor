@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.theme-light{
+  --primaryBg: theme('colors.gray.100');
+  --primaryButtonBg: theme('colors.white');
+}
+
+.theme-dark{
+  --primaryBg: theme('colors.gray.800');
+  --primaryButtonBg: theme('colors.gray.800');
+}

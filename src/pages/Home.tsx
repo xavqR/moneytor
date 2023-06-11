@@ -1,5 +1,8 @@
+import { useTitleLocation } from '../hooks/useTitleLocation'
+
 const Home = () => {
-    return <div className='dark:text-white'>Home</div>
+     useTitleLocation('Moneytor')
+     return <div className='dark:text-white'>Home</div>
 }
 
 export default Home

@@ -1,26 +1,21 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
-const useMatchMedia = (mediaQuery: string, initialValue: boolean) => {
-
-  const [isMatching, setIsMatching] = useState(initialValue)
+export function useMatchMedia(mediaQuery: string, initialValue: boolean): boolean {
+  const [isMatching, setIsMatching] = useState<boolean>(initialValue)
 
   useEffect(() => {
-
     const watcher = window.matchMedia(mediaQuery)
     setIsMatching(watcher.matches)
-
-    const listener = (matches: MediaQueryListEvent) => {
+    const onWindowMediaQueryChange = (matches: MediaQueryListEvent) => {
       setIsMatching(matches.matches)
     }
 
-    watcher.addEventListener('change', listener)
+    watcher.addEventListener('change', onWindowMediaQueryChange)
 
     return () => {
-      return watcher.removeEventListener('change', listener)
+      return watcher.removeEventListener('change', onWindowMediaQueryChange)
     }
   }, [mediaQuery])
 
   return isMatching
 }
-
-export default useMatchMedia;

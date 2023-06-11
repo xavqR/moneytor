@@ -9,13 +9,12 @@ import CrearAlerta from './pages/CrearAlerta'
 import CrearGasto from './pages/CrearGasto'
 
 function App() {
-
     return (
-        <div className='flex h-screen bg-red-200 dark:bg-gray-800 ' >
+        <div id='Layout' className='theme-light flex h-screen bg-primaryBg'>
             <SideBar />
-            <div className='flex flex-col grow '>
+            <section id='Content' className='flex flex-col grow'>
                 <MainHeader />
-                <main className='flex flex-1 bg-yellow-200'>
+                <main className='flex flex-1'>
                     <MainContent>
                         <Routes>
                             <Route path='/' element={<Home />} />
@@ -26,9 +25,10 @@ function App() {
                         </Routes>
                     </MainContent>
                 </main>
-            </div>
+            </section>
         </div>
     )
 }
 
 export default App
+

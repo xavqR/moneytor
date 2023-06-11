@@ -1,7 +1,7 @@
-import MenuOption from "../../domain/entites/MenuOption";
-import { MenuOptionType } from "../../domain/enums/MenuOptionType";
-import { MenuButton } from "./MenuButton";
-import { MenuLink } from "./MenuLink";
+import MenuOption from '../../domain/entites/MenuOption'
+import { MenuOptionType } from '../../domain/enums/MenuOptionType'
+import { MenuButton } from './MenuButton'
+import { MenuLink } from './MenuLink'
 
 type Props = {
   menuOption: MenuOption,

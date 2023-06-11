@@ -1,7 +1,7 @@
-import { Menu, Transition } from "@headlessui/react";
-import { Link, useLocation } from "react-router-dom";
-import MenuOptionIcon from "./MenuIcon";
-import MenuOption from "../../domain/entites/MenuOption";
+import { Menu, Transition } from '@headlessui/react'
+import { Link, useLocation } from 'react-router-dom'
+import MenuOptionIcon from './MenuIcon'
+import MenuOption from '../../domain/entites/MenuOption'
 
 type Props = {
   menuOption: MenuOption,
@@ -10,7 +10,7 @@ type Props = {
 
 export function MenuButton({ menuOption, isSideBarOpen }: Props): JSX.Element {
   const location = useLocation()
-  const isLocationSubMenuOption = menuOption.SubMenuOptions.find(smo => smo.Path === location.pathname);
+  const isLocationSubMenuOption = menuOption.SubMenuOptions.find(smo => smo.Path === location.pathname)
 
   return (
     <div className="mb-3">
