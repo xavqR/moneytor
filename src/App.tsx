@@ -1,12 +1,12 @@
-import SideBar from './components/SideBar/SideBar'
-import MainHeader from './components/MainHeader'
-import MainContent from './components/MainContent'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Alertas from './pages/Alertas'
 import Gastos from './pages/Gastos'
 import CrearAlerta from './pages/CrearAlerta'
 import CrearGasto from './pages/CrearGasto'
+import { MainContent } from './components/MainContent'
+import { MainHeader } from './components/MainHeader'
+import { SideBar } from './components/SideBar/SideBar'
 
 function App() {
     return (
@@ -25,6 +25,7 @@ function App() {
                         </Routes>
                     </MainContent>
                 </main>
+                <footer id='Fotter' className='h-4'></footer>
             </section>
         </div>
     )

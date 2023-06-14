@@ -1,7 +1,7 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Link, useLocation } from 'react-router-dom'
-import MenuOptionIcon from './MenuIcon'
 import MenuOption from '../../domain/entites/MenuOption'
+import { MenuIcon } from './MenuIcon'
 
 type Props = {
   menuOption: MenuOption,
@@ -17,9 +17,9 @@ export function MenuButton({ menuOption, isSideBarOpen }: Props): JSX.Element {
       <Menu>
         {({ open }) => (
           <>
-            <Menu.Button className={`${open || isLocationSubMenuOption ? 'bg-gray-300 shadow-gray-500' : 'bg-white shadow-gray-300'} inline-flex justify-center duration-300 px-4 py-2 rounded-2xl border border-gray-300 shadow-sm text-sm text-gray-700 hover:bg-gray-200 hover:shadow-md hover:text-gray-900 hover:shadow-gray-600`}>
-              <span className='text-xl pl-0'> <MenuOptionIcon iconType={menuOption.MenuOptionIcon} /></span>
-              <span className={` ${!isSideBarOpen && 'hidden'} text-sm ml-2`}>{menuOption.Title} </span>
+            <Menu.Button className={`${open || isLocationSubMenuOption ? 'bg-primaryOptionSelected shadow-primaryButtonShadowSelected' : 'bg-primaryButtonBg shadow-primaryButtonShadow'} inline-flex items-center h-11 px-4 rounded-2xl border shadow-md  border-gray-300 hover:bg-primaryButtonHoverBg hover:shadow-md hover:shadow-primaryButtonShadowHover duration-300 `}>
+              <span className='text-xl'> <MenuIcon iconType={menuOption.MenuOptionIcon} /></span>
+              <span className={` ${!isSideBarOpen && 'hidden'} ml-2`}>{menuOption.Title} </span>
             </Menu.Button>
             <Transition
               enter="transition ease-out duration-200"
@@ -28,12 +28,12 @@ export function MenuButton({ menuOption, isSideBarOpen }: Props): JSX.Element {
               leave="transition ease-in duration-100"
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-0">
-              <Menu.Items className={'w-44 mt-1 rounded-md shadow-lg absolute z-10 bg-white'}>
+              <Menu.Items className={'w-44 mt-1 rounded-md shadow-lg absolute z-10 bg-primaryButtonBg'}>
                 {menuOption.SubMenuOptions.map((subMenuOption) => {
                   return (
                     <Menu.Item key={subMenuOption.Id}  >
                       {({ active }) => (
-                        <Link to={subMenuOption.Path} className={`${active ? 'block px-4 py-2 text-sm text-gray-700 bg-gray-100 hover:text-gray-900' : 'block px-4 py-2 text-sm text-gray-700  hover:text-gray-900'} `} >{subMenuOption.Title}</Link>
+                        <Link to={subMenuOption.Path} className={`${active && 'block px-4 py-2 bg-primaryButtonHoverBg'} block px-4 py-2 `} >{subMenuOption.Title}</Link>
                       )}
                     </Menu.Item>
                   );

@@ -2,13 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .theme-light{
+  /* Background */
   --primaryBg: theme('colors.gray.100');
+  --primaryMainBg: theme('colors.white');
+
+  /* Text */
+  --primaryTextColor: theme('colors.black');
+
+  /* Logo */
+  --primaryLogoTextColor: theme('colors.gray.600');
+
+  /* Button */
   --primaryButtonBg: theme('colors.white');
+  --primaryButtonHoverBg: theme('colors.gray.200');
+  --primaryButtonShadow: theme('colors.gray.300');
+  --primaryButtonShadowSelected: theme('colors.gray.500');
+  --primaryButtonShadowHover: theme('colors.gray.600');
+
+  /* Form */
+  --primaryFormColor: theme('colors.gray.700');
+
+  /* Option */
+  --primaryOptionSelected: theme('colors.gray.300');
+  --primaryOptionHover: theme('colors.gray.200')
 }
 
 .theme-dark{
+  /* Background */
   --primaryBg: theme('colors.gray.800');
-  --primaryButtonBg: theme('colors.gray.800');
+  --primaryMainBg: theme('colors.gray.700');
+
+  /* Text */
+  --primaryTextColor: theme('colors.white');
+
+  /* logo */
+  --primaryLogoTextColor: theme('colors.gray.300');
+
+  /* Button */
+  --primaryButtonBg: theme('colors.gray.900');
+  --primaryButtonHoverBg: theme('colors.gray.700');
+  --primaryButtonShadow: theme('colors.gray.600');
+  --primaryButtonShadowSelected: theme('colors.gray.500');
+  --primaryButtonShadowHover: theme('colors.gray.400');
+
+    /* Form */
+  --primaryFormColor: theme('colors.gray.200');
+
+    /* Option */    
+  --primaryOptionSelected: theme('colors.gray.600');
+  --primaryOptionHover: theme('colors.gray.700');
 }

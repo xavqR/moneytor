@@ -1,27 +1,26 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BsArrowLeftCircle } from 'react-icons/bs'
-import MLogo from '../../assets/mLogo.svg'
-import MoneytorLogo from '../../assets/moneytorLogo.svg'
-import MenuOptionItem from './MenuOptionItem'
 import { useMenuOptions } from '../../hooks/useMenuOptions'
 import { useMatchMedia } from '../../hooks/useMatchMedia'
+import { MoneytorLogo } from '../Logo/MoneytorLogo'
+import { MenuOptionItem } from './MenuOptionItem'
 
-function SideBar(): JSX.Element {
+export function SideBar(): JSX.Element {
   const [open, setOpen] = useState(true)
   const menuOptions = useMenuOptions()
   const isOpenOrSM = useMatchMedia('(min-width:640px)', true) && open
 
   return (
     <>
-      <section id='options' className={`${open ? 'w-16 sm:w-40' : 'w-16'} relative h-screen duration-300 bg-primaryBg border-r border-gray-200 dark:border-gray-600 p-1 dark:bg-slate-800`}>
-        <BsArrowLeftCircle onClick={() => setOpen(!open)} className={`${open ? '' : '-rotate-180'} invisible sm:visible absolute duration-300 text-2xl bg-white fill-slate-800 rounded-full cursor-pointer top-9 -right-3 dark:fill-gray-400 dark:bg-gray-800`} />
+      <section id='options' className={`${isOpenOrSM ? 'w-16 sm:w-44' : 'w-16'} relative h-screen text-base text-primaryTextColor duration-300`}>
         <Link to='/'>
-          <header className={`flex ${open && 'gap-x-4'} items-center justify-center h-12`}>
-            {isOpenOrSM ? <img src={MoneytorLogo} alt='' className='w-24 ' /> : <img src={MLogo} alt='' className='w-14' />}
+          <header className={`flex ${isOpenOrSM && 'px-2'} h-12 mt-3`}>
+            <MoneytorLogo showLetters={isOpenOrSM} fontColor='var(--primaryLogoTextColor)' />
           </header>
         </Link>
-        <ul className='pt-6'>
+        <BsArrowLeftCircle onClick={() => setOpen(!open)} className={`${open ? '' : '-rotate-180'} invisible sm:visible absolute text-2xl top-16 -right-2 rounded-full cursor-pointer text-primaryFormColor bg-primaryButtonBg hover:bg-primaryButtonHoverBg opacity-80 duration-300`} />
+        <ul className='mt-9 ml-2'>
           {menuOptions && menuOptions.map((menu) => {
             return (
               <MenuOptionItem key={menu.Id} menuOption={menu} isSideBarOpen={isOpenOrSM}></MenuOptionItem>
@@ -32,5 +31,3 @@ function SideBar(): JSX.Element {
     </>
   )
 }
-
-export default SideBar

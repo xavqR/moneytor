@@ -4,15 +4,12 @@ type MyProps = {
   children?: React.ReactElement
 }
 
-function MainContent(props: PropsWithChildren<MyProps>): JSX.Element {
+export function MainContent(props: PropsWithChildren<MyProps>): JSX.Element {
   return (
     <>
-      <div>
+      <div className='ml-2 mr-4 bg-primaryMainBg h-full w-full rounded-2xl p-3'>
         {props.children}
       </div>
     </>
   )
 }
-
-
-export default MainContent

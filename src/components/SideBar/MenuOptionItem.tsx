@@ -21,4 +21,3 @@ export function MenuOptionItem({ menuOption, isSideBarOpen }: Props): JSX.Elemen
   }
 }
 
-export default MenuOptionItem

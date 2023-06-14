@@ -8,8 +8,28 @@ export default {
   theme: {
     extend: {
       colors: {
+        /* Background */
         primaryBg: 'var(--primaryBg)',
-        primaryBgDark: 'var(--primaryBgDark)'
+        primaryMainBg: 'var(--primaryMainBg)',
+
+        /* Text */
+        primaryTextColor: 'var(--primaryTextColor)',
+        /* Logo */
+        primaryLogoTextColor: 'var(--primaryLogoTextColor)',
+
+        /* Button */
+        primaryButtonBg: 'var(--primaryButtonBg)',
+        primaryButtonHoverBg: 'var(--primaryButtonHoverBg)',
+        primaryButtonShadow: 'var(--primaryButtonShadow)',
+        primaryButtonShadowSelected: 'var(--primaryButtonShadowSelected)',
+        primaryButtonShadowHover: 'var(--primaryButtonShadowHover)',
+
+        /* Form */
+        primaryFormColor: 'var(--primaryFormsColor)',
+
+        /* Option */
+        primaryOptionSelected: 'var(--primaryOptionSelected)',
+        primaryOptionHover: 'var(--primaryOptionHover)',
       }
     },
   },
