@@ -2,7 +2,7 @@ import { useTitleLocation } from '../hooks/useTitleLocation'
 
 const Alertas = () => {
     useTitleLocation('Moneytor - alertas')
-    return <div className='dark:text-white'>Alertas work in progress...</div>
+    return <div className=''>Alertas work in progress...</div>
 
 }
 

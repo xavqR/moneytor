@@ -5,16 +5,17 @@ import { useMenuOptions } from '../../hooks/useMenuOptions'
 import { useMatchMedia } from '../../hooks/useMatchMedia'
 import { MoneytorLogo } from '../Logo/MoneytorLogo'
 import { MenuOptionItem } from './MenuOptionItem'
+import MenuOption from '../../domain/entites/MenuOption'
 
 export function SideBar(): JSX.Element {
-  const [open, setOpen] = useState(true)
-  const menuOptions = useMenuOptions()
-  const isOpenOrSM = useMatchMedia('(min-width:640px)', true) && open
+  const [open, setOpen] = useState<boolean>(true)
+  const menuOptions: Array<MenuOption> = useMenuOptions()
+  const isOpenOrSM: boolean = useMatchMedia('(min-width:640px)', true) && open
 
   return (
     <>
-      <section id='options' className={`${isOpenOrSM ? 'w-16 sm:w-44' : 'w-16'} relative h-screen text-base text-primaryTextColor duration-300`}>
-        <Link to='/'>
+      <aside id='options' className={`${isOpenOrSM ? 'w-16 sm:w-44' : 'w-16'} relative h-screen text-base text-primaryTextColor duration-300`}>
+        <Link to='/calendar'>
           <header className={`flex ${isOpenOrSM && 'px-2'} h-12 mt-3`}>
             <MoneytorLogo showLetters={isOpenOrSM} fontColor='var(--primaryLogoTextColor)' />
           </header>
@@ -27,7 +28,7 @@ export function SideBar(): JSX.Element {
             );
           })}
         </ul>
-      </section>
+      </aside>
     </>
   )
 }

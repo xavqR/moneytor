@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
 import Alertas from './pages/Alertas'
 import Gastos from './pages/Gastos'
 import CrearAlerta from './pages/CrearAlerta'
@@ -7,6 +6,7 @@ import CrearGasto from './pages/CrearGasto'
 import { MainContent } from './components/MainContent'
 import { MainHeader } from './components/MainHeader'
 import { SideBar } from './components/SideBar/SideBar'
+import Calendar from './pages/Calendar'
 
 function App() {
     return (
@@ -17,9 +17,10 @@ function App() {
                 <main className='flex flex-1'>
                     <MainContent>
                         <Routes>
-                            <Route path='/' element={<Home />} />
+                            <Route path='/' element={<Calendar />} />
                             <Route path='/crearGasto' element={<CrearGasto />} />
                             <Route path='/crearAlerta' element={<CrearAlerta />} />
+                            <Route path='/calendar' element={<Calendar />} />
                             <Route path='/gastos' element={<Gastos />} />
                             <Route path='/alertas' element={<Alertas />} />
                         </Routes>

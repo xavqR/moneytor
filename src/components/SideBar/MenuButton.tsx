@@ -13,13 +13,13 @@ export function MenuButton({ menuOption, isSideBarOpen }: Props): JSX.Element {
   const isLocationSubMenuOption = menuOption.SubMenuOptions.find(smo => smo.Path === location.pathname)
 
   return (
-    <div className="mb-3">
+    <li className="mb-3">
       <Menu>
         {({ open }) => (
           <>
-            <Menu.Button className={`${open || isLocationSubMenuOption ? 'bg-primaryOptionSelected shadow-primaryButtonShadowSelected' : 'bg-primaryButtonBg shadow-primaryButtonShadow'} inline-flex items-center h-11 px-4 rounded-2xl border shadow-md  border-gray-300 hover:bg-primaryButtonHoverBg hover:shadow-md hover:shadow-primaryButtonShadowHover duration-300 `}>
-              <span className='text-xl'> <MenuIcon iconType={menuOption.MenuOptionIcon} /></span>
-              <span className={` ${!isSideBarOpen && 'hidden'} ml-2`}>{menuOption.Title} </span>
+            <Menu.Button className={`${open || isLocationSubMenuOption ? 'bg-primaryOptionSelected shadow-primaryButtonShadowSelected' : 'bg-primaryButtonBg shadow-primaryButtonShadow'} inline-flex max-w-full items-center h-11 px-4 rounded-2xl border shadow-md  border-gray-300 hover:bg-primaryButtonHoverBg hover:shadow-md hover:shadow-primaryButtonShadowHover duration-300 `}>
+              <span className='text-xl pl-0.5'> <MenuIcon iconType={menuOption.MenuOptionIcon} /></span>
+              <span className={` ${!isSideBarOpen && 'text-transparent'} ml-2 duration-500`}>{isSideBarOpen && menuOption.Title} </span>
             </Menu.Button>
             <Transition
               enter="transition ease-out duration-200"
@@ -43,6 +43,6 @@ export function MenuButton({ menuOption, isSideBarOpen }: Props): JSX.Element {
           </>
         )}
       </Menu>
-    </div>
+    </li>
   )
 }

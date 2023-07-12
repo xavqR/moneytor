@@ -1,5 +1,5 @@
 import { MenuOptionIconType } from '../../domain/enums/MenuOptionIconType'
-import { SlBell, SlWallet } from 'react-icons/sl'
+import { SlBell, SlCalender, SlWallet } from 'react-icons/sl'
 import { BiAddToQueue } from 'react-icons/bi'
 
 type Props = {
@@ -16,6 +16,7 @@ export function MenuIcon({ iconType }: Props): JSX.Element {
 
   function GetIcon(): undefined | JSX.Element {
     const IconTypeMap = new Map<MenuOptionIconType, JSX.Element>([
+      [MenuOptionIconType.Calendar, <SlCalender />],
       [MenuOptionIconType.Expenses, <SlWallet />],
       [MenuOptionIconType.Alerts, <SlBell />],
       [MenuOptionIconType.New, <BiAddToQueue />]

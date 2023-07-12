@@ -12,8 +12,9 @@ class MenuOptionsService implements IMenuOptionsService {
     subMmenuOptions.push(new SubMenuOption(2, 'Alerta', '/crearAlerta'))
     menuOptions.push(new MenuOption(1, 'Crear', '/crear', MenuOptionIconType.New, MenuOptionType.Button, subMmenuOptions))
 
-    menuOptions.push(new MenuOption(2, 'Gastos', '/gastos', MenuOptionIconType.Expenses, MenuOptionType.Link))
-    menuOptions.push(new MenuOption(3, 'Alertas', '/alertas', MenuOptionIconType.Alerts, MenuOptionType.Link))
+    menuOptions.push(new MenuOption(2, 'Calendario', '/calendar', MenuOptionIconType.Calendar, MenuOptionType.Link))
+    menuOptions.push(new MenuOption(3, 'Gastos', '/gastos', MenuOptionIconType.Expenses, MenuOptionType.Link))
+    menuOptions.push(new MenuOption(4, 'Alertas', '/alertas', MenuOptionIconType.Alerts, MenuOptionType.Link))
 
     return menuOptions
   }
