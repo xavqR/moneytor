@@ -1,0 +1,22 @@
+{
+  "expenses": [
+    {
+      "id": 1,
+      "category": "Food",
+      "amount": 50.25,
+      "date": "2024-10-28"
+    },
+    {
+      "id": 2,
+      "category": "Transportation",
+      "amount": 20.50,
+      "date": "2024-11-11"
+    },
+    {
+      "id": 3,
+      "category": "Entertainment",
+      "amount": 100.00,
+      "date": "2024-11-12"
+    }
+  ]
+}

@@ -7,10 +7,15 @@ import { MainContent } from './components/MainContent'
 import { MainHeader } from './components/MainHeader'
 import { SideBar } from './components/SideBar/SideBar'
 import Calendar from './pages/Calendar'
+import { ThemeModeContext } from './context/ThemeModeContext.jsx'
+import { useContext } from 'react'
+import { ThemeModeType } from './context/ThemeModeType.js'
 
 function App() {
+    const themeModeContext = useContext(ThemeModeContext);
+
     return (
-        <div id='Layout' className='theme-light flex h-screen bg-primaryBg'>
+        <div id='Layout' className={`${themeModeContext?.themeMode === ThemeModeType.dark ? 'theme-dark' : 'theme-light'}  flex h-screen bg-primaryBg`}>
             <SideBar />
             <section id='Content' className='flex flex-col grow'>
                 <MainHeader />

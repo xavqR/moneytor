@@ -30,10 +30,9 @@ export default {
         /* Option */
         primaryOptionSelected: 'var(--primaryOptionSelected)',
         primaryOptionHover: 'var(--primaryOptionHover)',
-      }
+      },
     },
-  },
 
-  plugins: [],
+    plugins: [],
+  }
 }
-

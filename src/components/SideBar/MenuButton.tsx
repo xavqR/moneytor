@@ -24,10 +24,10 @@ export function MenuButton({ menuOption, isSideBarOpen }: Props): JSX.Element {
             <Transition
               enter="transition ease-out duration-200"
               enterFrom="transform opacity-0 scale-0"
-              enterTo="transform opacity-100 scale-100"
-              leave="transition ease-in duration-100"
-              leaveFrom="transform opacity-100 scale-100"
-              leaveTo="transform opacity-0 scale-0">
+              enterTo="transform opacity-100 scale-100 absolute z-10"
+              leave="transition ease-in duration-100 absolute z-10"
+              leaveFrom="transform opacity-100 scale-100 "
+              leaveTo="transform opacity-0 scale-0 ">
               <Menu.Items className={'w-44 mt-1 rounded-md shadow-lg absolute z-10 bg-primaryButtonBg'}>
                 {menuOption.SubMenuOptions.map((subMenuOption) => {
                   return (

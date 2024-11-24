@@ -1,8 +1,21 @@
 import { useTitleLocation } from '../hooks/useTitleLocation'
 
-const CrearGasto = () => {
+export default function CrearGasto(): JSX.Element {
     useTitleLocation('Moneytor - crear gasto')
-    return <div className=' dark:text-white'>Crear gasto work in progress...</div>
+
+    return (
+        <>
+            <div className=' dark:text-white'>Crear gasto</div>
+
+            <form>
+                <label>
+                    Desctipción:
+                    <input type='text' name='name' />
+                </label>
+                <input type='submit' value='Submit' />
+            </form>
+        </>
+    )
 }
 
-export default CrearGasto
+
